@@ -201,6 +201,7 @@ body::before {
     align-items: center;
     padding-top: 70px;
     overflow: hidden;
+    z-index: 3;
 }
 
 .hero-background {
@@ -226,6 +227,8 @@ body::before {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    position: relative;
+    z-index: 5;
 }
 
 .hero-text {
@@ -332,6 +335,8 @@ body::before {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 10;
 }
 
 .btn {
@@ -344,6 +349,7 @@ body::before {
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    z-index: 15;
 }
 
 .btn-primary {
@@ -516,6 +522,7 @@ body::before {
 /* Section Styles */
 section {
     padding: 5rem 0;
+    position: relative;
 }
 
 .section-title {
@@ -543,6 +550,7 @@ section {
     background: var(--bg-secondary);
     position: relative;
     overflow: hidden;
+    z-index: 1;
 }
 
 .about::before {
@@ -555,6 +563,7 @@ section {
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="20" fill="%2300d4aa" opacity="0.1">01010101</text></svg>') repeat;
     animation: binaryFlow 15s linear infinite;
     pointer-events: none;
+    z-index: 0;
 }
 
 @keyframes binaryFlow {
@@ -568,7 +577,7 @@ section {
     gap: 4rem;
     align-items: center;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .about-intro {

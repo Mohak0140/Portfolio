@@ -359,6 +359,7 @@ function initCounters() {
             if (entry.isIntersecting) {
                 const counter = entry.target;
                 const target = parseInt(counter.getAttribute('data-target'));
+                const suffix = counter.getAttribute('data-suffix') || '';
                 const duration = 2000; // 2 seconds
                 const start = performance.now();
 
@@ -370,12 +371,12 @@ function initCounters() {
                     const easeOutQuart = 1 - Math.pow(1 - progress, 4);
                     const current = Math.round(target * easeOutQuart);
                     
-                    counter.textContent = current;
+                    counter.textContent = current + suffix;
                     
                     if (progress < 1) {
                         requestAnimationFrame(updateCounter);
                     } else {
-                        counter.textContent = target;
+                        counter.textContent = target + suffix;
                     }
                 }
                 

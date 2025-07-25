@@ -446,19 +446,24 @@ function initScrollEffects() {
             hero.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
         }
         
-        // Hide hero buttons when about section comes into view
-        if (aboutSection && heroButtons) {
+        // Hide hero content when about section comes into view
+        if (aboutSection) {
             const aboutTop = aboutSection.offsetTop;
             const triggerPoint = aboutTop - window.innerHeight * 0.8; // Trigger when about section is 80% visible
+            const heroContent = document.querySelector('.hero-content');
             
             if (scrolled >= triggerPoint) {
-                heroButtons.style.opacity = '0';
-                heroButtons.style.transform = 'translateY(20px) scale(0.9)';
-                heroButtons.style.pointerEvents = 'none';
+                if (heroContent) {
+                    heroContent.style.opacity = '0';
+                    heroContent.style.transform = 'translateY(30px) scale(0.95)';
+                    heroContent.style.pointerEvents = 'none';
+                }
             } else {
-                heroButtons.style.opacity = '1';
-                heroButtons.style.transform = 'translateY(0) scale(1)';
-                heroButtons.style.pointerEvents = 'auto';
+                if (heroContent) {
+                    heroContent.style.opacity = '1';
+                    heroContent.style.transform = 'translateY(0) scale(1)';
+                    heroContent.style.pointerEvents = 'auto';
+                }
             }
         }
     });

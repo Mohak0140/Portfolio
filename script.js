@@ -433,15 +433,33 @@ function initContactForm() {
 
 // Scroll Effects
 function initScrollEffects() {
-    // Parallax effect for hero section
+    // Parallax effect for hero section and button visibility
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
         const hero = document.querySelector('.hero');
         const heroHeight = hero.offsetHeight;
+        const aboutSection = document.querySelector('.about');
+        const heroButtons = document.querySelector('.hero-buttons');
         
         if (scrolled < heroHeight) {
             const parallaxSpeed = 0.5;
             hero.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+        }
+        
+        // Hide hero buttons when about section comes into view
+        if (aboutSection && heroButtons) {
+            const aboutTop = aboutSection.offsetTop;
+            const triggerPoint = aboutTop - window.innerHeight * 0.8; // Trigger when about section is 80% visible
+            
+            if (scrolled >= triggerPoint) {
+                heroButtons.style.opacity = '0';
+                heroButtons.style.transform = 'translateY(20px) scale(0.9)';
+                heroButtons.style.pointerEvents = 'none';
+            } else {
+                heroButtons.style.opacity = '1';
+                heroButtons.style.transform = 'translateY(0) scale(1)';
+                heroButtons.style.pointerEvents = 'auto';
+            }
         }
     });
 
@@ -568,12 +586,12 @@ function debounce(func, wait) {
     };
 }
 
-// Apply debouncing to scroll events
+// Apply debouncing to scroll events for additional scroll handlers
 const debouncedScrollHandler = debounce(() => {
-    // Your scroll handling code here
+    // Additional scroll handling code can go here
 }, 16); // ~60fps
 
-window.addEventListener('scroll', debouncedScrollHandler);
+// Note: Main scroll effects are handled in initScrollEffects() function
 
 // Add loading states for images
 document.addEventListener('DOMContentLoaded', function() {

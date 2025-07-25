@@ -650,8 +650,6 @@ section {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    align-items: center;
-    justify-content: center;
 }
 
 .stat-item {
@@ -698,6 +696,61 @@ section {
 .stat-label {
     color: var(--text-secondary);
     font-weight: 500;
+}
+
+/* Languages Section Styling */
+.languages-item {
+    text-align: center !important;
+}
+
+.languages-item .stat-label {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.languages-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.language-tag {
+    background: var(--gradient-code);
+    color: var(--bg-terminal);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: 'Fira Code', monospace;
+    border: 1px solid var(--border-neon);
+    box-shadow: var(--shadow-neon);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.language-tag::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.language-tag:hover::before {
+    left: 100%;
+}
+
+.language-tag:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 212, 170, 0.4);
 }
 
 /* Skills Section */
@@ -1156,13 +1209,21 @@ section {
     }
 
     .about-stats {
-        flex-direction: row;
-        justify-content: space-between;
+        flex-direction: column;
+        gap: 1.5rem;
     }
 
     .stat-item {
-        flex: 1;
-        margin: 0 0.5rem;
+        margin: 0;
+    }
+
+    .languages-list {
+        gap: 0.3rem;
+    }
+
+    .language-tag {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
     }
 
     .contact-content {
@@ -1213,6 +1274,16 @@ section {
 
     .stat-item {
         margin: 0;
+    }
+
+    .languages-list {
+        gap: 0.25rem;
+        flex-direction: column;
+    }
+
+    .language-tag {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
     }
 }
 

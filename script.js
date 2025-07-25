@@ -209,31 +209,31 @@ function initAnimations() {
         .to('.hero-text', {
             opacity: 1,
             y: 0,
-            duration: 1,
+            duration: 1.2,
             ease: 'power3.out',
-            delay: 2
+            delay: 1.5
         })
         .to('.hero-avatar', {
             opacity: 1,
             y: 0,
-            duration: 1,
+            duration: 1.2,
             ease: 'power3.out'
-        }, '-=0.5');
+        }, '-=0.8');
 
     // Section animations
     gsap.utils.toArray('section').forEach((section, index) => {
         if (index === 0) return; // Skip hero section
 
         gsap.fromTo(section.querySelector('.section-title'), 
-            { opacity: 0, y: 50 },
+            { opacity: 0, y: 30 },
             {
                 opacity: 1,
                 y: 0,
-                duration: 1,
+                duration: 0.8,
                 ease: 'power3.out',
                 scrollTrigger: {
                     trigger: section,
-                    start: 'top 80%',
+                    start: 'top 85%',
                     end: 'bottom 20%',
                     toggleActions: 'play none none reverse'
                 }
@@ -244,17 +244,17 @@ function initAnimations() {
     // Project cards animation
     gsap.utils.toArray('.project-card').forEach((card, index) => {
         gsap.fromTo(card,
-            { opacity: 0, y: 50, scale: 0.9 },
+            { opacity: 0, y: 30, scale: 0.95 },
             {
                 opacity: 1,
                 y: 0,
                 scale: 1,
-                duration: 0.8,
+                duration: 0.6,
                 ease: 'power3.out',
-                delay: index * 0.2,
+                delay: index * 0.1,
                 scrollTrigger: {
                     trigger: card,
-                    start: 'top 85%',
+                    start: 'top 90%',
                     toggleActions: 'play none none reverse'
                 }
             }
@@ -264,16 +264,16 @@ function initAnimations() {
     // Skill categories animation
     gsap.utils.toArray('.skill-category').forEach((category, index) => {
         gsap.fromTo(category,
-            { opacity: 0, x: index % 2 === 0 ? -50 : 50 },
+            { opacity: 0, x: index % 2 === 0 ? -30 : 30 },
             {
                 opacity: 1,
                 x: 0,
-                duration: 1,
+                duration: 0.8,
                 ease: 'power3.out',
-                delay: index * 0.3,
+                delay: index * 0.15,
                 scrollTrigger: {
                     trigger: category,
-                    start: 'top 85%',
+                    start: 'top 90%',
                     toggleActions: 'play none none reverse'
                 }
             }
@@ -283,16 +283,16 @@ function initAnimations() {
     // About details animation
     gsap.utils.toArray('.detail-item').forEach((item, index) => {
         gsap.fromTo(item,
-            { opacity: 0, x: -30 },
+            { opacity: 0, x: -20 },
             {
                 opacity: 1,
                 x: 0,
-                duration: 0.8,
+                duration: 0.6,
                 ease: 'power3.out',
-                delay: index * 0.2,
+                delay: index * 0.15,
                 scrollTrigger: {
                     trigger: item,
-                    start: 'top 85%',
+                    start: 'top 90%',
                     toggleActions: 'play none none reverse'
                 }
             }
@@ -302,11 +302,12 @@ function initAnimations() {
     // Floating icons animation
     gsap.utils.toArray('.floating-icon').forEach((icon, index) => {
         gsap.to(icon, {
-            y: '-=20',
-            duration: 2 + index * 0.5,
+            y: '-=15',
+            duration: 2.5,
             ease: 'power2.inOut',
             yoyo: true,
-            repeat: -1
+            repeat: -1,
+            delay: index * 0.6
         });
     });
 }

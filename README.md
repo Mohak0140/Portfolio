@@ -1,21 +1,22 @@
-# Modern Portfolio Website
+# Software Engineer Portfolio
 
-A stunning, modern portfolio website with 3D effects, animations, and responsive design - perfect for internship applications and showcasing your skills as a Computer Science Engineering student.
+A cutting-edge portfolio website with software engineering theme, 3D effects, horizontal scrolling, and terminal-inspired design - perfect for showcasing your coding skills and landing that dream internship!
 
 ## ✨ Features
 
-### 🎨 Modern Design
-- Clean, professional layout
-- Gradient backgrounds and modern color scheme
-- Glassmorphism effects
-- Custom animations and transitions
+### 💻 Software Engineering Theme
+- Terminal-inspired design with command line aesthetics
+- Neon green color scheme with cyberpunk vibes
+- Code syntax highlighting and monospace fonts
+- Binary code animations and matrix effects
+- Glitch effects and tech-inspired elements
 
 ### 🚀 3D Effects & Animations
-- Three.js powered 3D particle background
-- Floating geometric shapes
+- Three.js powered 3D particle background with neon colors
+- Floating wireframe geometric shapes
 - GSAP scroll-triggered animations
-- Smooth parallax effects
-- Interactive elements
+- Horizontal scrolling sections for immersive experience
+- Interactive terminal-style elements
 
 ### 📱 Responsive Design
 - Mobile-first approach
@@ -24,11 +25,13 @@ A stunning, modern portfolio website with 3D effects, animations, and responsive
 - Optimized for different screen sizes
 
 ### 🎯 Interactive Features
-- Animated skill bars
+- Horizontal scrolling skills and projects sections
+- Terminal-style command line interface
+- Animated skill bars with neon effects
 - Counting animations for statistics
-- Hover effects and micro-interactions
-- Smooth scrolling navigation
-- Contact form with validation
+- Hover effects with neon glows and micro-interactions
+- Matrix rain effects and binary code animations
+- Contact form with cyberpunk styling
 
 ### ⚡ Performance Optimized
 - Fast loading with optimized assets

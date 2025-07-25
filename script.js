@@ -100,30 +100,42 @@ function initHero3D() {
 
     // Particles material
     const particlesMaterial = new THREE.PointsMaterial({
-        size: 0.005,
-        color: '#6366f1',
+        size: 0.008,
+        color: '#00d4aa',
         transparent: true,
-        opacity: 0.8
+        opacity: 0.9
     });
 
     // Particles mesh
     const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
     scene.add(particlesMesh);
 
-    // Create floating geometric shapes
+    // Create floating code-themed shapes
     const shapes = [];
     const geometries = [
-        new THREE.BoxGeometry(0.1, 0.1, 0.1),
-        new THREE.SphereGeometry(0.05, 8, 8),
-        new THREE.ConeGeometry(0.05, 0.1, 8)
+        new THREE.BoxGeometry(0.15, 0.15, 0.15),
+        new THREE.SphereGeometry(0.08, 12, 12),
+        new THREE.ConeGeometry(0.08, 0.15, 8),
+        new THREE.OctahedronGeometry(0.1),
+        new THREE.TetrahedronGeometry(0.12)
     ];
 
-    for (let i = 0; i < 20; i++) {
+    const colors = [
+        '#00d4aa', // Primary green
+        '#fd79a8', // Secondary pink
+        '#fdcb6e', // Accent yellow
+        '#00ff41', // Code green
+        '#00d4ff'  // Code blue
+    ];
+
+    for (let i = 0; i < 30; i++) {
         const geometry = geometries[Math.floor(Math.random() * geometries.length)];
+        const color = colors[Math.floor(Math.random() * colors.length)];
         const material = new THREE.MeshBasicMaterial({
-            color: new THREE.Color().setHSL(Math.random() * 0.1 + 0.6, 0.7, 0.6),
+            color: color,
             transparent: true,
-            opacity: 0.6
+            opacity: 0.7,
+            wireframe: Math.random() > 0.5 // 50% chance for wireframe
         });
         
         const mesh = new THREE.Mesh(geometry, material);
